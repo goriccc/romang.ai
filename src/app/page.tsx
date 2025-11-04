@@ -23,9 +23,24 @@ export default function Home() {
     .filter((char) => char.gender === "여성")
     .slice(0, 12)
 
-  // 남주 캐릭터
+  // 남주 캐릭터 (도지헌 → 유진우 → 강호윤 → 카시안 순서)
   const maleCharacters = mockCharacters
     .filter((char) => char.gender === "남성")
+    .sort((a, b) => {
+      // 도지헌(id: "15")을 맨 앞으로
+      if (a.id === "15") return -1
+      if (b.id === "15") return 1
+      // 유진우(id: "17")을 두 번째로
+      if (a.id === "17") return -1
+      if (b.id === "17") return 1
+      // 강호윤(id: "2")을 세 번째로
+      if (a.id === "2") return -1
+      if (b.id === "2") return 1
+      // 카시안(id: "1")을 네 번째로
+      if (a.id === "1") return -1
+      if (b.id === "1") return 1
+      return 0
+    })
     .slice(0, 12)
 
   // 판타지 캐릭터
@@ -136,13 +151,6 @@ export default function Home() {
           />
         )}
 
-        {/* 인기 급상승 */}
-        <CharacterSection
-          title="🔥 인기 급상승 캐릭터"
-          characters={popularCharacters}
-          viewAllHref="/characters?sort=popularity"
-        />
-
         {/* 남주 캐릭터 */}
         {maleCharacters.length > 0 && (
           <CharacterSection
@@ -151,6 +159,13 @@ export default function Home() {
             viewAllHref="/characters?gender=남성"
           />
         )}
+
+        {/* 인기 급상승 */}
+        <CharacterSection
+          title="🔥 인기 급상승 캐릭터"
+          characters={popularCharacters}
+          viewAllHref="/characters?sort=popularity"
+        />
 
         {/* 판타지 캐릭터 */}
         {fantasyCharacters.length > 0 && (

@@ -24,7 +24,9 @@ export default function ChatPage() {
     {
       role: "assistant",
       content: character
-        ? `안녕하세요! 저는 ${character.name}입니다. ${character.description} 무엇이든 편하게 물어보세요!`
+        ? characterId === "2"
+          ? "안녕하세요! 저는 강호윤입니다. 도은리 유일 슈퍼의 주인이에요"
+          : `안녕하세요! 저는 ${character.name}입니다. ${character.description} 무엇이든 편하게 물어보세요!`
         : "안녕하세요! 무엇이든 편하게 물어보세요!",
     },
   ])
