@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description: "설렘, 낭만, 그리고 판타지. 로망은 당신이 원하는 모든 대화를 현실로 만듭니다. 생생한 AI 캐릭터와 함께하는 몰입형 채팅으로 오늘 당신의 로망이 시작됩니다. / Excitement, romance, and fantasy. Romang brings every conversation you desire to life. Experience immersive chat with vivid AI characters. Your romance begins today.",
   keywords: ["AI 캐릭터", "로맨스 판타지", "인터랙티브 스토리", "AI 이야기"],
   authors: [{ name: "Romang AI" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
