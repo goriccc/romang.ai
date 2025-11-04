@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Character } from "@/lib/types"
 import { Card } from "./ui/Card"
 import { cn } from "@/lib/utils"
+import { characterPrompts } from "@/lib/character-prompts"
 
 interface CharacterCardProps {
   character: Character
@@ -20,8 +21,9 @@ export default function CharacterCard({ character, showPopularity = true }: Char
     return num.toString()
   }
 
-  // 박혜림(id: "3")인 경우 채팅 페이지로 이동
-  const href = character.id === "3" ? `/chat/${character.id}` : `/characters/${character.id}`
+  // characterPrompts에 설정된 캐릭터는 채팅 페이지로 이동
+  const hasChatPrompt = characterPrompts[character.id] !== undefined
+  const href = hasChatPrompt ? `/chat/${character.id}` : `/characters/${character.id}`
 
   return (
     <Link href={href}>

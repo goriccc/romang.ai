@@ -156,24 +156,52 @@ export default function ChatPage() {
         {/* 채팅 메시지 영역 */}
         <Card className="flex-1 flex flex-col overflow-hidden mb-4">
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${
-                  message.role === "user" ? "justify-end" : "justify-start"
-                }`}
-              >
+            {messages.map((message, index) => {
+              // 행동 묘사 (*...*) 감지
+              const renderContent = (content: string) => {
+                const parts = content.split(/(\*[^*]+\*)/g)
+                return parts.map((part, i) => {
+                  if (part.startsWith('*') && part.endsWith('*')) {
+                    // 행동 묘사는 더 연하게 표시
+                    return (
+                      <span
+                        key={i}
+                        className={
+                          message.role === "user"
+                            ? "text-white/60 italic"
+                            : "text-gray-500 dark:text-gray-400 italic"
+                        }
+                      >
+                        {part.slice(1, -1)}
+                      </span>
+                    )
+                  }
+                  // 일반 대화 텍스트
+                  return <span key={i}>{part}</span>
+                })
+              }
+
+              return (
                 <div
-                  className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                    message.role === "user"
-                      ? "bg-indigo-600 text-white"
-                      : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                  key={index}
+                  className={`flex ${
+                    message.role === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
-                  <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                  <div
+                    className={`max-w-[80%] rounded-lg px-4 py-2 ${
+                      message.role === "user"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                    }`}
+                  >
+                    <p className="text-sm whitespace-pre-wrap">
+                      {renderContent(message.content)}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2">

@@ -127,13 +127,6 @@ export default function Home() {
           />
         )}
 
-        {/* 인기 급상승 */}
-        <CharacterSection
-          title="🔥 인기 급상승 캐릭터"
-          characters={popularCharacters}
-          viewAllHref="/characters?sort=popularity"
-        />
-
         {/* 여주 캐릭터 */}
         {femaleCharacters.length > 0 && (
           <CharacterSection
@@ -142,6 +135,13 @@ export default function Home() {
             viewAllHref="/characters?gender=여성"
           />
         )}
+
+        {/* 인기 급상승 */}
+        <CharacterSection
+          title="🔥 인기 급상승 캐릭터"
+          characters={popularCharacters}
+          viewAllHref="/characters?sort=popularity"
+        />
 
         {/* 남주 캐릭터 */}
         {maleCharacters.length > 0 && (

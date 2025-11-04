@@ -11,7 +11,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold text-gray-900 dark:text-white">
-            로망
+            로망.ai
           </span>
         </Link>
 
