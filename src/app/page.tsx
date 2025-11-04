@@ -61,7 +61,7 @@ export default function Home() {
               로맨스 판타지 스토리
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              가상의 캐릭터에 성격과 상황을 부여하고 그에 맞춰 채팅을 해보세요
+              설렘, 낭만, 그리고 판타지. 로망은 당신이 원하는 모든 대화를 현실로 만듭니다. 생생한 AI 캐릭터와 함께하는 몰입형 채팅으로 오늘 당신의 로망이 시작됩니다.
             </p>
           </div>
         </section>
