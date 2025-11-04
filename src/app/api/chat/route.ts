@@ -4,7 +4,9 @@ import { characterPrompts } from "@/lib/character-prompts"
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || "",
-  anthropicVersion: "2023-06-01", // Anthropic API 버전 지정
+  defaultHeaders: {
+    "anthropic-version": "2023-06-01", // Anthropic API 버전 지정
+  },
 })
 
 export async function POST(req: NextRequest) {
