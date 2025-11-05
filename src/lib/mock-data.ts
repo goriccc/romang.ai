@@ -3,13 +3,15 @@ import { Character } from "./types"
 export const mockCharacters: Character[] = [
   {
     id: "1",
-    name: "카시안",
-    description: "첫날밤, 이불 꽁꽁 싸매고 노려보는 웬수와의 정략결혼",
-    tags: ["첫날밤웬수시리즈", "HL", "BL", "소꿉친구", "정략결혼", "로맨스판타지", "찡찡이", "순애", "귀여움", "순정남"],
+    name: "이안백 원장",
+    description: "국내 최고권위 신경정신과 원장",
+    tags: ["TCI전문가", "35년경력정신과의사", "성장중심상담", "따뜻한통찰력", "정신과의사"],
     category: "로맨스판타지",
     gender: "남성",
     popularity: 9600,
     viewCount: 9600,
+    image: "/7.jpg",
+    thumbnail: "/7.jpg",
     isNew: false,
     isFeatured: true,
     createdAt: new Date("2024-01-15"),
