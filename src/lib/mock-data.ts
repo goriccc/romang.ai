@@ -5,7 +5,7 @@ export const mockCharacters: Character[] = [
     id: "1",
     name: "이안백 원장",
     description: "국내 최고권위 신경정신과 원장",
-    tags: ["TCI전문가", "35년경력정신과의사", "성장중심상담", "따뜻한통찰력", "정신과의사"],
+    tags: ["TCI전문가", "25년경력정신과의사", "성장중심상담", "따뜻한통찰력", "정신과의사"],
     category: "로맨스판타지",
     gender: "남성",
     popularity: 9600,
